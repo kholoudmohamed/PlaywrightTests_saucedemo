@@ -18,7 +18,9 @@ export class CheckoutPage extends BasePage {
   }
 
   async assertItemInCart(productName: string) {
-    await expect(this.page.locator('h3:has-text("' + productName + '")').nth(1)).toBeVisible({ timeout: 10000 });
+    await expect(this.page.locator('h3:has-text("' + productName + '")').nth(1)).toBeVisible({
+      timeout: 10000,
+    });
   }
 
   async assertCheckoutAvailable() {
@@ -26,6 +28,8 @@ export class CheckoutPage extends BasePage {
   }
 
   async assertCartIsNotEmpty() {
-    await expect(this.page.getByText('Your cart is currently empty')).not.toBeVisible({ timeout: 10000 });
+    await expect(this.page.getByText('Your cart is currently empty')).not.toBeVisible({
+      timeout: 10000,
+    });
   }
 }

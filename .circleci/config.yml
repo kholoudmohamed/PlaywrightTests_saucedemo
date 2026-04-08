@@ -1,0 +1,69 @@
+version: 2.1
+
+orbs:
+  browser-tools: circleci/browser-tools@1.4.8
+
+executors:
+  playwright:
+    docker:
+      - image: cimg/node:18.20.4-browsers
+    working_directory: ~/project
+
+jobs:
+  test:
+    executor: playwright
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
+
+      - run:
+          name: Install dependencies
+          command: npm ci
+
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+
+      - run:
+          name: Install Playwright browsers
+          command: npx playwright install --with-deps
+
+      - run:
+          name: Run linting
+          command: npm run lint
+
+      - run:
+          name: Run tests
+          command: npm test
+
+      - store_test_results:
+          path: test-results
+
+      - store_artifacts:
+          path: test-results
+          destination: test-results
+
+      - store_artifacts:
+          path: playwright-report
+          destination: playwright-report
+
+      - run:
+          name: Generate test summary
+          command: |
+            echo "Test Results Summary:"
+            find test-results -name "*.json" -exec cat {} \; | jq -r '.suites[0].specs[]?.tests[]? | "\(.title): \(.results[0].status)"' 2>/dev/null || echo "No JSON results found"
+          when: always
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test:
+          filters:
+            branches:
+              only: /.*/

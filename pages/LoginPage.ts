@@ -8,6 +8,8 @@ export class LoginPage extends BasePage {
 
   async assertLoaded() {
     await expect(this.page).toHaveTitle(/Sauce Demo/i);
-    await expect(this.page.getByText('Just a demo site showing off what Sauce can do.')).toBeVisible();
+    await expect(
+      this.page.getByText('Just a demo site showing off what Sauce can do.')
+    ).toBeVisible();
   }
 }
