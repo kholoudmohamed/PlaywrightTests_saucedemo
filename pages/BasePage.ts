@@ -15,8 +15,4 @@ export class BasePage {
   async getTitle() {
     return this.page.title();
   }
-
-  async waitForSelector(selector: string) {
-    await this.page.waitForSelector(selector);
-  }
 }

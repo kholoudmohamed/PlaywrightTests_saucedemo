@@ -1,15 +1,11 @@
-import { test } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { InventoryPage } from '../pages/InventoryPage';
-import { ProductPage } from '../pages/ProductPage';
-import { CheckoutPage } from '../pages/CheckoutPage';
+import { test, expect } from './fixtures/fixtures';
 
-test('checkout demo happy path', async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  const inventoryPage = new InventoryPage(page);
-  const productPage = new ProductPage(page);
-  const checkoutPage = new CheckoutPage(page);
-
+test('checkout demo happy path', async ({
+  loginPage,
+  inventoryPage,
+  productPage,
+  checkoutPage,
+}) => {
   await test.step('Load homepage and validate core elements', async () => {
     await loginPage.navigateTo();
     await loginPage.assertLoaded();
@@ -31,7 +27,7 @@ test('checkout demo happy path', async ({ page }) => {
 
   await test.step('Open cart and verify line item', async () => {
     // Navigate back to homepage where cart link is visible
-    await page.goto('/');
+    // await page.goto('/');
     await checkoutPage.open();
     await checkoutPage.assertLoaded();
     await checkoutPage.assertCartIsNotEmpty();

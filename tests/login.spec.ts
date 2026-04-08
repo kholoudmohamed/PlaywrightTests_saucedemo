@@ -1,14 +1,9 @@
-import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { AccountPage } from '../pages/AccountPage';
+import { test, expect } from './fixtures/fixtures';
 import { users } from '../utils/testData/users';
 
 test.describe('User can login successfully', () => {
   users.forEach(user => {
-    test(`login with ${user.emailAddress}`, async ({ page }) => {
-      const loginPage = new LoginPage(page);
-      const accountPage = new AccountPage(page);
-
+    test(`login with ${user.emailAddress}`, async ({ loginPage, accountPage }) => {
       await loginPage.navigateTo();
       await loginPage.assertLoaded();
       await loginPage.login(user.emailAddress, user.password);
