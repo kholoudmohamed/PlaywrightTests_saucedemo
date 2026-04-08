@@ -115,13 +115,13 @@ The project includes a complete CircleCI configuration (`.circleci/config.yml`) 
 #### Local vs CI Parity
 
 The CI environment mirrors local development:
+
 - Same Node.js version and dependencies
 - Identical Playwright configuration
 - Same test execution commands
 - Consistent browser environments
 
 > **Note**: Pipeline access may be restricted. Test reports and results are available as downloadable artifacts from the CircleCI dashboard.
-
 
 ## � Code Quality & Formatting
 
