@@ -1,0 +1,85 @@
+{
+  "cookies": [
+    {
+      "name": "localization",
+      "value": "NL",
+      "domain": "sauce-demo.myshopify.com",
+      "path": "/",
+      "expires": 1806685325.707317,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cart_currency",
+      "value": "GBP",
+      "domain": "sauce-demo.myshopify.com",
+      "path": "/",
+      "expires": 1776358925.707849,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_shopify_y",
+      "value": "c0ed075a-bc83-4f06-843a-60ab398ae023",
+      "domain": ".sauce-demo.myshopify.com",
+      "path": "/",
+      "expires": 1806706925.708017,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_shopify_s",
+      "value": "ea7b5b85-a56e-4afc-9569-11bfbe8c2cf4",
+      "domain": ".sauce-demo.myshopify.com",
+      "path": "/",
+      "expires": 1775151125.708099,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_shopify_analytics",
+      "value": ":AZ1PJR1kAAEA_yPrrqR_f0PW0dNGFYycU4AS5jN0q8fON8LdNe4M3KlcGdvtZfAYOuX8u-_BOIrD6H3F1WZvPeazYPKLIXBEUalWpM9sfoNxWqAl9MPj-dLTTJACcs8YwGcK3yoNFBZeBg:",
+      "domain": "sauce-demo.myshopify.com",
+      "path": "/",
+      "expires": 1806685325.708205,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_shopify_marketing",
+      "value": ":AZ1PJR1lAAEAjXJDxWgyt8A_Q0ZLMfZ1oxoY_fzb6RLKU4ONLDH1CYzUTcIhsXIVd5TED1XErQW7qc9uFBVndWkv-2b--XekiLFOnvLOrQoKv76ENiK67LyCV_HJ_RCqOA:",
+      "domain": "sauce-demo.myshopify.com",
+      "path": "/",
+      "expires": 1806685325.708243,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_cfuvid",
+      "value": "N45LmD0z5F6M.kewcJR7isQDAkab5udYd6Nm3bVTLbA-1775149327.114431-1.0.1.1-JNyNWtkLsgca6ZpPwCzWEveeue7hAVkzsy3ds1hVdVE",
+      "domain": ".www.marinsoftware.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_shopify_essential",
+      "value": ":AZ1PJR1PAAEAza6t39m-PcSzJ8y7c32j9qRueXGhSEr6So3onSEEZZs03s3wa8u2oj1eK32xcMnoW8EcnqJDqBn6PMqLDTXL30bcp-07wZGoQNg4pmvbRwh1LjhwgCgI3qYCFPJcLOgXKSreaAuuUqxTFgCsDCK4_Bz-qCIT9jiqoIlaQJRckk-99OFf9LDXFVc_m6_gZ1jpY2RYVcmd85qElao4-eMk6H_S2ubjJy_hjq-HaL685AQSCUomIGHWlwWudWU3TBU-nVIMeBLgxI9EcyO9OlqfrcojbMfXVI2Rn-b7d5rr0Pcyz9KGcmHeYh59HlaDnEUpSewolgjtAPxaHRSH_DUVjmGhVFjBBP_Sj_UONXHJ7E2l_cdhQrv_xtnc1H9QvbH7nUREoded1pqE8Mty8-GL9kxtc0RSsmBOJIyn8RnXWxAHKyWkHQd7jVp_lzv0V-oBoiQTLQZM:",
+      "domain": "sauce-demo.myshopify.com",
+      "path": "/",
+      "expires": 1806685392.508993,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}
