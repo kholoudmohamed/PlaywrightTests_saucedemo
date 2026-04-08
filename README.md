@@ -4,7 +4,7 @@
 
 A comprehensive Playwright TypeScript test automation demo for the Sauce Demo Shopify site (https://sauce-demo.myshopify.com). This project demonstrates QA practices including Page Object Model, clean test structure, and reliable e2e testing for interview purposes.
 
-## 🚀 Quick Start
+## �🚀 Quick Start
 
 ### Prerequisites
 
@@ -87,6 +87,7 @@ Test results are automatically generated in `test-results/` and `playwright-repo
 ### CircleCI Pipeline
 
 The project includes a complete CircleCI configuration (`.circleci/config.yml`) for automated testing:
+[View CircleCI Pipeline](https://app.circleci.com/pipelines/github/kholoudmohamed/PlaywrightTests_saucedemo)
 
 #### Pipeline Setup
 
