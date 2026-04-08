@@ -14,7 +14,7 @@ export default defineConfig({
   forbidOnly: isCI,
   retries: isCI ? 2 : 0,
   workers: isCI ? 1 : undefined,
-  reporter: [['html', { open: isCI ? 'never' : 'on-failure' }]],
+  reporter: [['html', { open: isCI ? 'never' : 'on-failure' }], ['junit', { outputFile: 'test-results/junit.xml' }]],
   timeout: 120_000,
   expect: { timeout: 12_000 },
   use: {
