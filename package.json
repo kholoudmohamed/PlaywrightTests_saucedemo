@@ -8,7 +8,7 @@
     "test:headed": "npx playwright test --headed",
     "test:report": "npx playwright show-report",
     "test:debug": "npx playwright test --debug",
-    "lint": "npx eslint . --ext .ts",
+    "lint": "npx eslint . --ext .ts --format=compact",
     "lint:fix": "npx eslint . --ext .ts --fix",
     "format": "npx prettier --write .",
     "format:check": "npx prettier --check ."
