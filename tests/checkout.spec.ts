@@ -1,10 +1,12 @@
 import { test } from './fixtures/fixtures';
+import { Cart } from '../components/Cart';
 
 test('checkout demo happy path', async ({
   loginPage,
   inventoryPage,
   productPage,
   checkoutPage,
+  page,
 }) => {
   await test.step('Load homepage and validate core elements', async () => {
     await loginPage.navigateTo();
@@ -21,8 +23,10 @@ test('checkout demo happy path', async ({
   });
 
   await test.step('Add product to cart and verify badge count', async () => {
+    const cart = new Cart(page);
+
     await productPage.addToCart();
-    await productPage.verifyCartCount(1);
+    await cart.assertCartCountInHeader(1);
   });
 
   await test.step('Open cart and verify line item', async () => {

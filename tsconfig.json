@@ -5,6 +5,7 @@
     "lib": ["DOM", "ES2020"],
     "strict": true,
     "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,

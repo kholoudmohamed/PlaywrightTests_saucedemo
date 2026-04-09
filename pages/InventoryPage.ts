@@ -3,7 +3,6 @@ import { BasePage } from './BasePage';
 
 export class InventoryPage extends BasePage {
   readonly productTiles = this.page.locator('div.four.columns');
-  readonly cartBadge = this.page.locator('.cart .count');
   readonly firstProductLink = this.page.locator('a#product-1');
 
   async assertLoaded() {
@@ -15,10 +14,5 @@ export class InventoryPage extends BasePage {
   async addFirstItemToCart() {
     // Click on the first product link to go to product detail page
     await this.firstProductLink.click();
-  }
-
-  async getCartCount() {
-    const countText = await this.cartBadge.textContent();
-    return parseInt(countText || '0');
   }
 }
