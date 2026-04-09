@@ -1,6 +1,7 @@
 import { test } from '../fixtures/fixtures';
 import { Cart } from '../../components/CartDrawer';
 import type { SelectedProductOptions } from '../../pages/ProductPage';
+import { ADDRGETNETWORKPARAMS } from 'node:dns';
 
 test('checkout demo happy path - one product', async ({
   inventoryPage,
@@ -35,5 +36,6 @@ test('checkout demo happy path - one product', async ({
 
   await test.step('Verify checkout CTA is available', async () => {
     await checkoutPage.navigate();
+    await checkoutPage.assertPayNowButtonVisible();
   });
 });
