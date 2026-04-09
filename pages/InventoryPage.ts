@@ -2,17 +2,33 @@ import { expect } from '@playwright/test';
 import { BasePage } from './BasePage';
 
 export class InventoryPage extends BasePage {
-  readonly productTiles = this.page.locator('div.four.columns');
-  readonly firstProductLink = this.page.locator('a#product-1');
+  protected readonly path = '/collections/all';
+  readonly allProductsLinks = this.page.locator('.product-grid>div>a');
+  readonly availableProductsLinks = this.allProductsLinks.filter({
+    hasNot: this.page.locator('.sold-out'),
+  });
 
   async assertLoaded() {
-    await expect(this.page).toHaveTitle(/Sauce Demo/i);
-    const count = await this.productTiles.count();
+    await super.assertLoaded();
+    const count = await this.allProductsLinks.count();
     expect(count).toBeGreaterThan(0);
   }
 
-  async addFirstItemToCart() {
-    // Click on the first product link to go to product detail page
-    await this.firstProductLink.click();
+  async openRandomAvailableProductAndReturnTitle() {
+    const productCount = await this.availableProductsLinks.count();
+    if (productCount <= 0) {
+      throw new Error('No available products to open');
+    }
+
+    const randomIndex = Math.floor(Math.random() * productCount);
+    const selectedProduct = this.availableProductsLinks.nth(randomIndex);
+    const productTitle = (await selectedProduct.locator('h3').textContent())?.trim();
+
+    if (!productTitle) {
+      throw new Error(`Could not read product title at index ${randomIndex}`);
+    }
+
+    await selectedProduct.click();
+    return productTitle;
   }
 }

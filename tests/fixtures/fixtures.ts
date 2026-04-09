@@ -4,6 +4,7 @@ import { AccountPage } from '../../pages/AccountPage';
 import { CheckoutPage } from '../../pages/CheckoutPage';
 import { InventoryPage } from '../../pages/InventoryPage';
 import { ProductPage } from '../../pages/ProductPage';
+import { CartPage } from '../../pages/CartPage';
 
 type MyFixtures = {
   loginPage: LoginPage;
@@ -11,6 +12,7 @@ type MyFixtures = {
   checkoutPage: CheckoutPage;
   inventoryPage: InventoryPage;
   productPage: ProductPage;
+  cartPage: CartPage;
 };
 export const test = base.extend<MyFixtures>({
   loginPage: async ({ page }, use) => {
@@ -27,6 +29,9 @@ export const test = base.extend<MyFixtures>({
   },
   productPage: async ({ page }, use) => {
     await use(new ProductPage(page));
+  },
+  cartPage: async ({ page }, use) => {
+    await use(new CartPage(page));
   },
 });
 export { expect } from '@playwright/test';

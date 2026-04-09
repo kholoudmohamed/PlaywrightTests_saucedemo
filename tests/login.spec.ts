@@ -4,8 +4,7 @@ import { users } from '../utils/testData/users';
 test.describe('User can login successfully', () => {
   users.forEach(user => {
     test(`login with ${user.emailAddress}`, async ({ loginPage, accountPage }) => {
-      await loginPage.navigateTo();
-      await loginPage.assertLoaded();
+      await loginPage.navigate();
       await loginPage.login(user.emailAddress, user.password);
 
       if (await loginPage.doesChallengeExist()) {

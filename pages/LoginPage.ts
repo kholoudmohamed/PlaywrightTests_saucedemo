@@ -2,18 +2,15 @@ import { expect } from '@playwright/test';
 import { BasePage } from './BasePage';
 
 export class LoginPage extends BasePage {
+  protected readonly path = '/account/login';
   readonly emailAddress = this.page.locator('#customer_email');
   readonly password = this.page.locator('#customer_password');
   readonly signInButton = this.page.locator('.button[value="Sign In"]');
   readonly challengeFrame = this.page.frameLocator('iframe[src*="captcha"][scrolling]');
   readonly challengeHeader = this.challengeFrame.locator('.challenge-header');
 
-  async navigateTo() {
-    await this.navigate('/account/login');
-  }
-
   async assertLoaded() {
-    await expect(this.page).toHaveTitle(/Sauce Demo/i);
+    await super.assertLoaded();
     await expect(this.emailAddress).toBeVisible();
   }
 
