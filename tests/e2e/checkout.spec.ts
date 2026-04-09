@@ -1,7 +1,6 @@
 import { test } from '../fixtures/fixtures';
 import { Cart } from '../../components/CartDrawer';
 import type { SelectedProductOptions } from '../../pages/ProductPage';
-import { ADDRGETNETWORKPARAMS } from 'node:dns';
 
 test('checkout demo happy path - one product', async ({
   inventoryPage,
