@@ -1,4 +1,4 @@
-import { test, expect } from './fixtures/fixtures';
+import { test } from './fixtures/fixtures';
 
 test('checkout demo happy path', async ({
   loginPage,

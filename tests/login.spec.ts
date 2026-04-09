@@ -1,4 +1,4 @@
-import { test, expect } from './fixtures/fixtures';
+import { test } from './fixtures/fixtures';
 import { users } from '../utils/testData/users';
 
 test.describe('User can login successfully', () => {
