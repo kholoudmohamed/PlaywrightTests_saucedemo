@@ -11,7 +11,7 @@ export class Cart {
   constructor(private page: Page) {
     this.root = page.locator('#drawer');
     this.cartLink = this.page.locator('#minicart>.toggle-drawer.cart');
-    this.cartLinkItemsCount = this.page.locator('#minicart>.toggle-drawer.cart span.count');
+    this.cartLinkItemsCount = this.cartLink.locator('span.count:not(.cart-target)').first();
     this.emptyCartMessage = this.root.locator('p.empty');
     this.removeCartItemlinks = this.root.locator('a.removeLine');
   }
@@ -30,7 +30,13 @@ export class Cart {
 
   async assertCartCountInHeader(count: number) {
     await expect(this.cartLink).toBeVisible();
-    await expect(this.cartLinkItemsCount).toHaveText(count.toString());
+    await expect
+      .poll(async () => {
+        const badgeText = (await this.cartLinkItemsCount.textContent())?.trim() ?? '';
+
+        return badgeText.replace(/[^\d]/g, '');
+      })
+      .toBe(count.toString());
   }
 
   async removeAllCartItems() {

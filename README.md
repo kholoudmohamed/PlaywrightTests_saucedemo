@@ -33,7 +33,7 @@ npm test
 npx playwright test --headed
 
 # Run specific test file
-npx playwright test tests/checkout.spec.ts
+npx playwright test tests/e2e/checkout.spec.ts
 
 # Run with specific browser
 npx playwright test --project=chromium
@@ -56,7 +56,11 @@ npx playwright show-report
 ```
 PlaywrightTests_saucedemo/
 ├── pages/                          # Page Object classes
-├── tests/                         # Test specifications
+├── components/                     # Components available across pages
+├── tests/                          # Test specifications
+    ├── tests/e2e/                  # E2E Tests
+    ├── tests/fixtures/             # Test fixtures for integratins PO's
+├── utils/testData/                 # Test Data Files for storing
 ```
 
 ## 🔧 Configuration
