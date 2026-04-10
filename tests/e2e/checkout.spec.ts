@@ -28,12 +28,17 @@ test('checkout demo happy path - one product', async ({
     await cart.assertCartCountInHeader(1);
   });
 
-  await test.step('Open cart and verify line item', async () => {
+  await test.step('Open cart and verify the added item', async () => {
     await cartPage.navigate();
     await cartPage.assertCartIsNotEmpty();
+    await cartPage.assertCorrectNumberOfProductsIsDisplayed(1);
+    await cartPage.assertProductWithSelectedOptionsIsDisplayed(
+      selectedProductTitle,
+      selectedProductOptions
+    );
   });
 
-  await test.step('Verify checkout CTA is available', async () => {
+  await test.step('Verify checkout is available', async () => {
     await checkoutPage.navigate();
     await checkoutPage.assertPayNowButtonVisible();
   });
