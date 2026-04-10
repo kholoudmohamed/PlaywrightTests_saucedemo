@@ -11,7 +11,7 @@ export class Cart {
   constructor(private page: Page) {
     this.root = page.locator('#drawer');
     this.cartLink = this.page.locator('#minicart>.toggle-drawer.cart');
-    this.cartLinkItemsCount = this.cartLink.locator('span.count');
+    this.cartLinkItemsCount = this.page.locator('#minicart>.toggle-drawer.cart span.count');
     this.emptyCartMessage = this.root.locator('p.empty');
     this.removeCartItemlinks = this.root.locator('a.removeLine');
   }
